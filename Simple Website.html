@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map of Seksyen 7, Shah Alam</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7hejj2U87qNPZfqznUMONNtZMQ05FCns"></script>
+  <script>
+    function initMap() {
+      var seksyen2 = {lat: 3.0676724736974306, lng: 101.51198955076775}; 
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: seksyen2
+      });
+      var marker = new google.maps.Marker({
+        position: seksyen2,
+        map: map
+      });
+    }
+  </script>
+</head>
+<body onload="initMap()">
+  <div id="map" style="height: 500px; width: 100%;"></div>
+  <input type="text"> <!--//https://stackoverflow.com/questions/56387831/how-to-print-html-geolocation-->
+    <button onclick="getLocation()">GPS Track</button>
+    <p id="demo"></p>
+    <script>
+    var x = document.getElementById("demo");
+    console.log(x);
+       function getLocation() {
+         if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(showPosition);
+         } else {
+           x.innerHTML = "Geolocation is not supported by this browser.";
+         }
+       }
+
+       function showPosition(position) {
+         x.innerHTML = "Latitude: " + position.coords.latitude +
+         "<br>Longitude: " + position.coords.longitude;
+       }
+       </script>
+
+
+<label for="dropdown2">Number of Epoch:</label>
+<select id="dropdown2" name="Number of Epoch">
+  <option value="option1">10</option>
+  <option value="option2">20</option>
+  <option value="option3">30</option>
+</select>
+<br>
+<label for="dropdown1">Number of artificial ants:</label>
+<select id="dropdown1" name="Number of artificial ants">
+  <option value="option1">10</option>
+  <option value="option2">30</option>
+  <option value="option3">50</option>
+</select>
+<br>
+<label for="dropdown2">Number of Iteration:</label>
+<select id="dropdown2" name="Number of Iteration">
+  <option value="option1">10</option>
+  <option value="option2">20</option>
+  <option value="option3">30</option>
+</select>
+<br>
+<label for="dropdown2">Alpha Rate:</label>
+<select id="dropdown3" name="Alpha Rate">
+  <option value="option1">0.3</option>
+  <option value="option2">0.7</option>
+  <option value="option3">1.2</option>
+</select>
+<br>
+<label for="dropdown2">Evaporation Rate:</label>
+<select id="dropdown3" name="Evaporation Rate">
+  <option value="option1">0.01</option>
+  <option value="option2">0.3</option>
+  <option value="option3">0.7</option>
+  <option value="option3">0.9</option>
+</select>
+<label for="dropdown2">Q:</label>
+<select id="dropdown3" name="Q">
+  <option value="option1">0.01</option>
+  <option value="option2">0.3</option>
+  <option value="option3">0.7</option>
+  <option value="option3">0.9</option>
+</select>
+
+
+       
+</body>
+</html>
